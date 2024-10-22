@@ -1,0 +1,92 @@
+---
+title: "Harvard Data Science Review"
+output: html_notebook
+author: Wookyeong Song
+date: 18th, Oct, 2024
+---
+
+```{r}
+cor2net = function(cov_mat, alpha){
+  
+  diag(cov_mat) <- 0
+  cov_mat <- abs(cov_mat)
+  threshold <- quantile(cov_mat, 1-alpha)
+  adji = ifelse(cov_mat >= threshold, cov_mat, 0)
+  
+  adji <- -adji
+  diag(adji) <- -colSums(adji)
+  
+  return(adji)
+  
+}
+```
+
+```{r}
+#### Predictors
+covariates_path = "/Users/wookyeongsong/Desktop/WK_UCD/Research/Data/abide_aal/abide_phenotypic.csv"
+aal_pred = read.csv(covariates_path)
+
+# NYU Predictors
+aal_pred_nyu = aal_pred[aal_pred[,'SITE_ID'] == "NYU",]
+
+# Subject ID - NYU
+sub_ids = aal_pred_nyu[,'subject']
+#####
+
+
+#### Response
+folder_path <- "/Users/wookyeongsong/Desktop/WK_UCD/Research/Data/abide_aal/aal/"  # Replace with the path to your folder
+
+# NYU Responses
+aal_resp_nyu = list()
+for (i in 1:length(sub_ids)){
+  
+  aal_resp_nyu[[i]] = read.csv(paste0(folder_path, sub_ids[i], ".csv"), header = FALSE)
+
+}
+
+#### Remove subjects having correlations matrix with NAs: 61, 72, 75, 135, 151
+na_cor_ids = c()
+for(i in 1:length(aal_resp_nyu)){
+  
+  if(sum(is.na(cor(aal_resp_nyu[[i]]))) != 0){na_cor_ids = c(na_cor_ids, i)}
+  
+}
+na_cor_ids
+
+# Pearson correlation to network with trucation alpha = 0.15
+mPred_aal = data.frame()
+lResp_aal = list()
+for (i in 1:length(aal_resp_nyu)){
+  
+  if (i %in% na_cor_ids) {next}
+  
+  mPred_aal = rbind(mPred_aal, aal_pred_nyu[i,])
+  lResp_aal = c(lResp_aal, list(cor2net(cor(aal_resp_nyu[[i]]), alpha = 0.15)))
+
+}
+length(lResp_aal)
+```
+
+
+```{r}
+sum(mPred_aal[,3]>21)
+table(mPred_aal[,6])
+## Distance matrix
+k = length(lResp_aal)
+dist_mat_aal = matrix(0, nrow = k, ncol = k)
+
+for(i in 1:k){
+  
+  for(j in 1:k){
+    
+    if (i == j){next}
+    dist_mat_aal[i,j] = sqrt(sum((lResp_aal[[i]] - lResp_aal[[j]])^2))
+    
+  }
+}
+
+Vm = sum(dist_mat_aal^2)/(2*k*k)
+
+```
+
