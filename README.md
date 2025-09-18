@@ -1,6 +1,6 @@
 # HDSR_Metric_Statistics
 
-This repository contains the implementation for the paper ``Non-Euclidean Data Analysis With Metric Statistics" which were run using R. This repository contains a comprehensive analysis using Autism Brain Imaging Data Exchange (ABIDE) dataset, fetched from the Nilearn Python package (https://nilearn.github.io/dev/modules/generated/nilearn.datasets.fetch_abide_pcp.html). 
+This repository contains the implementation for the paper "Non-Euclidean Data Analysis With Metric Statistics" which were run using R. This repository contains a comprehensive analysis using Autism Brain Imaging Data Exchange (ABIDE) dataset, fetched from the Nilearn Python package (https://nilearn.github.io/dev/modules/generated/nilearn.datasets.fetch_abide_pcp.html). 
 
 ## Dataset
 We selected the AAL Atlas due to its extensive use in Neuroscience and its success in our previous projects. This atlas parcellates the whole brain into 116 ROIs.
