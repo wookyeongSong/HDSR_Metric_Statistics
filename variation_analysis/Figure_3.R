@@ -8,7 +8,7 @@
 ###############################################################################
 
 # load main functions
-source("~/Desktop/WK_UCD/Research/Harvard Data Review/HDSR_Variance_mainfunctions.R")
+source("Variance_mainfunctions.R")
 
 
 ## Set Hyperparameters

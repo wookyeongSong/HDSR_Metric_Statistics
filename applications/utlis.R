@@ -85,9 +85,6 @@ g_sphere<-function(x){
   return(out)
 }
 
-
-
-
 belongs_to_set <- function(datapoints, input_set, gap = 1) {
   # Calculate the differences between consecutive elements in the input_set
   diffs <- diff(input_set)
@@ -295,6 +292,3 @@ cov.curv.est = function(cov.array, metric = NULL) {
   return(list(Fmean = Fmean, Vf = Vf, Vm = Vm, cov = cov, cov.normalized = cov.normalized, test.stat= test.stat, pval = pval, rho= rho, sd = sd))
   
 }
-
-
-

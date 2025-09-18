@@ -3,8 +3,7 @@
 This repository contains the implementation for the paper "Non-Euclidean Data Analysis With Metric Statistics" which were run using R. This repository contains a comprehensive analysis using Autism Brain Imaging Data Exchange (ABIDE) dataset, fetched from the Nilearn Python package (https://nilearn.github.io/dev/modules/generated/nilearn.datasets.fetch_abide_pcp.html). 
 
 ## Dataset
-We selected the AAL Atlas due to its extensive use in Neuroscience and its success in our previous projects. This atlas parcellates the whole brain into 116 ROIs.
-Dataset can be found in `applications/abide_aal` folder.
+We selected the AAL Atlas due to its extensive use in Neuroscience and its success in our previous projects. This atlas parcellates the whole brain into 116 ROIs. Dataset can be found in `applications/abide_aal` folder.
 
 Files: 
 - aal_labels.csv: Contains the names of the 116 ROIs.
@@ -14,8 +13,7 @@ Files:
 ## Details on reproducing results, figures, and tables
 
 In `frechet_regression` folder:
-* To be updated
-* To be updated
+* `/Figures1&2.R`: Creates Figures 1 and 2 demonstrating Fréchet regression on a toy example with weighted networks.
 
 In `variation_analysis` folder:
 * `/variance_mainfunctions.R`: Contains all main functions necessary for the simulations and real data analysis regarding variation_analysis in Section 3.
@@ -27,6 +25,9 @@ In `distance_profile` folder:
 
 In `applications` folder:
 * `/abide_aal` folder: Contains ABIDE dataset.
+* `/gnr.R`: Contains the main Fréchet regression function for network data. This implements global network regression using graph Laplacians with Euclidean predictors, supporting both Frobenius and power metrics.
+* `/NetworkRegressionABIDE.R`: Implements Fréchet regression analysis for functional connectivity networks using the ABIDE dataset. Compares network properties between autism spectrum disorder (ASD) and control groups across different ages. Produces Figures 7, 8, and 9 showing network visualizations and metrics.
+* `/variance_autism.R`: Performs variance analysis of autism brain imaging data for Section 5. Analyzes the variability in functional connectivity networks between ASD and control groups, producing Figure 10.
 * `/data_process.R`: Preprocess the data required for two-sample testing in Section 5.
 * `/utlis.R`: Contains all main functions necessary for the two sample testing in Section 5.
 * `/test.R`: Obtain the p-values of the two sample testing in Section 5.
