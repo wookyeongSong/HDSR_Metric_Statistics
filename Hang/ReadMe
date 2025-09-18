@@ -1,0 +1,2 @@
+1. In the Simulation folder, run `Figure_4.R`, `Figure_5.R`, and `Figure_6.R` to produce Figures 4, 5, and 6 in Section 4, respectively.
+2. To reproduce the test results in Section 5, first run `data_process.R` to preprocess the data, and then run `test.R` to obtain the p-values.
