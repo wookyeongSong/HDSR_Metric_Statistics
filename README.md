@@ -27,7 +27,7 @@ In `distance_profile` folder:
 
 In `applications` folder:
 * `/abide_aal` folder: Contains ABIDE dataset.
-* `/data_process.R`: Preprocess the data required for two-sample testing
+* `/data_process.R`: Preprocess the data required for two-sample testing in Section 5.
 * `/utlis.R`: Contains all main functions necessary for the two sample testing in Section 5.
 * `/test.R`: Obtain the p-values of the two sample testing in Section 5.
 * `/Figure_10.R`: Produce Figure 10 in Section 5.
