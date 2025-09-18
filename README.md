@@ -30,4 +30,5 @@ In `applications` folder:
 * `/data_process.R`: Preprocess the data required for two-sample testing
 * `/utlis.R`: Contains all main functions necessary for the two sample testing in Section 5.
 * `/test.R`: Obtain the p-values of the two sample testing in Section 5.
-* `/variance_autism.R`: Produce variance analysis results corresponding to Table 1 and Figure 10 in Section 5.
+* `/Figure_10.R`: Produce Figure 10 in Section 5.
+* `/Table_1.R`: Produce Table 1 in Section 5.
