@@ -29,4 +29,5 @@ In `applications` folder:
 * `/abide_aal` folder: Contains ABIDE dataset.
 * `/data_process.R`: Preprocess the data required for two-sample testing
 * `/utlis.R`: Contains all main functions necessary for the two sample testing in Section 5.
+* `/test.R`: Obtain the p-values of the two sample testing in Section 5.
 * `/variance_autism.R`: Produce variance analysis results corresponding to Table 1 and Figure 10 in Section 5.
